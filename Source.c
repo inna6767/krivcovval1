@@ -1,37 +1,54 @@
-
 #include <stdio.h>
 #include <locale.h>
-int name();
-int date();
+#define D 2.54
 
 int main()
 {
 	setlocale(LC_CTYPE, "RUS");
-	name();
-	date();
-	return 3;
+
+	int num1, num2;
+
+	puts("Введите первое число");
+	scanf_s("%d", &num1);
+
+	puts("Введите второе число");
+	scanf_s("%d", &num2);
+
+	printf("Сумма = %d\n Разность = %d\n Произведение =%d\n Частное = %d\n Остаток от деления = %d", num1+num2,num1-num2,num1*num2,num1/num2,num1%num2);
+
+	main1();
+	main2();
+
+	return 1;
+
 }
 
-
-
-int name()
+int main1()
 {
-	setlocale(LC_CTYPE, "RUS");
-	puts("**************************************************************************");
-	puts("*                                                                        *");
-	puts("*Разработка консольного приложения Выполнил:Киселева А.П. и Кривцова И.А.*");
-	puts("*                                                                        *");
-	puts("**************************************************************************");
+	int dym;
+
+	float result;
+
+	puts("Введите дюймы");
+	scanf_s("%d", &dym);
+	result = D * dym;
+
+	printf("%d английских дюймов - это %.1f см \n %d испанских дюймов - это %.1f см \n", dym, result, dym, dym * 2.32166);
+	return 1;
+
+}
+
+int main2()
+{
+	float num1, num2;
+
+	puts("Введите первое число");
+	scanf_s("%f",&num1);
+
+	puts("Введите второе число");
+	scanf_s("%f",&num2);
+
+	printf("___________________________________________\n|    a * b    |    a + b    |    a - b     |\n-------------------------------------------\n| %4.1f * %4.1f | %4.1f + %4.1f | %4.1f - %5.1f |\n-------------------------------------------\n|    %4.1f    |    %4.1f     |    %4.1f      | ", num1, num2, num1, num2, num1, num2, num1 * num2, num1 + num2, num1 - num2);
 	return 1;
 }
-
-int date()
-{
-	puts(" _                _    _  ");
-	puts("| |  |    |  |   | |  |_| ");
-	puts("| |  |    |  |   | |  | | ");
-	puts(" -                -    -  ");
-	return 1;
-}
-
 
